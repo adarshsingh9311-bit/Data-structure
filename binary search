@@ -1,0 +1,33 @@
+public class binearySearch {
+
+    public static void main(String[] args) {
+        
+        int[] numbers = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
+        int target = 23;
+        
+        int low = 0;
+        int high = numbers.length - 1;
+        int foundIndex = -1;
+
+        while (low <= high) {
+            
+            int mid = low + (high - low) / 2; 
+
+            if (numbers[mid] == target) {
+                foundIndex = mid;
+                break;            
+            } else if (numbers[mid] < target) {
+                low = mid + 1;   
+            } else {
+                high = mid - 1;  
+            }
+        }
+
+      
+        if (foundIndex != -1) {
+            System.out.println("Element " + target + " found at index: " + foundIndex);
+        } else {
+            System.out.println("Element " + target + " not found in the array.");
+        }
+    }
+}
