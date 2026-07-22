@@ -1,0 +1,27 @@
+public class LinearSearchWithoutFunction {
+    public static void main(String[] args) {
+        // 1. Initialize the dataset array and the target item to find
+        int[] numbers = {12, 45, 7, 23, 56, 89, 34};
+        int target = 56;
+        
+        // 2. Variables to track the results
+        boolean isFound = false;
+        int foundIndex = -1;
+
+        // 3. Sequentially traverse the array using a loop
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == target) {
+                isFound = true;
+                foundIndex = i;
+                break; // Exit the loop immediately once found
+            }
+        }
+
+        // 4. Output the search result to the console
+        if (isFound) {
+            System.out.println("Element " + target + " found at index: " + foundIndex);
+        } else {
+            System.out.println("Element " + target + " was not found in the array.");
+        }
+    }
+}
